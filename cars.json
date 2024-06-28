@@ -1,0 +1,5 @@
+[
+  { "car_number": 9284759, "problems": ["Engine", "Break"] },
+  { "car_number": 3754891, "problems": ["Engine", "Break"] },
+  { "car_number": "2467803", "problems": ["10,000 km treatment", "Gear"] }
+]
