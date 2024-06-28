@@ -9,7 +9,11 @@ problems_list = [
 
 
 def add_problems():
+    from cars.actions import clear_terminal
+
+    # creates list of problems of the car
     car_problems_list = []
+    clear_terminal()
     while True:
         print("please select the car's problems:")
         print(f"1-{problems_list[0]}")
@@ -18,7 +22,7 @@ def add_problems():
         print(f"4-{problems_list[3]}")
         print(f"5-{problems_list[4]}")
         print(f"6-{problems_list[5]}")
-        print("write 7 if you want to exit the menu")
+        print("write 7 if you finished adding car problems")
         choice = int(input("enter your choice\n"))
         if choice == 7:
             return car_problems_list

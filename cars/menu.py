@@ -1,9 +1,9 @@
 from cars.actions import add_car, delete_car, list_cars, search_car
-from json_functions import read_json, save_json
+from json_functions import read_json
 from problems.problems import total_sum_of_garage
 
 
-# cars=[{"car_number":9284759, "problems":["Engine","Break"]},{"car_number":3754891, "problems":["Engine","Break"]}]
+# cars_initial=[{"car_number":9284759, "problems":["Engine","Break"]},{"car_number":3754891, "problems":["Engine","Break"]}]
 def menu():
     while True:
         cars = read_json()
@@ -21,11 +21,11 @@ def menu():
                 print("no cars in the garage")
             else:
                 print(print_txt)
-        if choice == "2":
+        elif choice == "2":
             add_car(cars)
-        if choice == "3":
+        elif choice == "3":
             delete_car(cars)
-        if choice == "4":
+        elif choice == "4":
             search_car_txt = search_car(cars)
             print_txt = list_cars(cars)
             if search_car_txt == "" and print_txt == "":
@@ -34,8 +34,10 @@ def menu():
                 print("no search results")
             else:
                 print(search_car_txt)
-        if choice == "5":
+        elif choice == "5":
             total_sum_of_garage(cars)
-        if choice == "6":
+        elif choice == "6":
             print("goodbye")
             break
+        else:
+            print("not a valid choice")

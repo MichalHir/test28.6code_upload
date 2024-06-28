@@ -6,3 +6,4 @@ from cars.menu import menu
 
 if __name__ == "__main__":
     menu()
+    # menu refers to all of the functions in this code

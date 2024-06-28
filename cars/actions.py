@@ -6,10 +6,12 @@ from problems.problems import calculate_total_price
 import os
 
 def clear_terminal():
+    # clears the terminal
     os.system("cls" if os.name == "nt" else "clear")
 
 
 def list_cars(cars_array):
+    # prints the car list
     clear_terminal()
     cars_str=""
     for index, car in enumerate(cars_array):
@@ -18,11 +20,12 @@ def list_cars(cars_array):
 
 
 def add_car(cars_array):
+    # adds a new car to the list of cars
     clear_terminal()
     problems = add_problems()
     sum = calculate_total_price(problems)
     permission=input(print (f"the price of this fix is {sum} do you wish to proceed? write yes/no:"))
-    if permission =="yes":
+    if permission.lower() =="yes":
         car_number = input("what is the car number?\n")
         new_car = {"car_number": car_number, "problems": problems}
         cars_array.append(new_car)
@@ -33,6 +36,7 @@ def add_car(cars_array):
 
 
 def delete_car(cars_array):
+    # deletes one car of your choice
     clear_terminal()
     if len(cars_array) == 0:
         return print("no cars in the garage")
@@ -45,9 +49,10 @@ def delete_car(cars_array):
 
 
 def search_car(cars_array):
+    # searches according to search term
     clear_terminal()
     search_str=""
-    search_txt=str(input("What is the search term\n"))
+    search_txt=str(input("what car number would you like to search\n"))
     for index, car in enumerate(cars_array):
         if search_txt in str(car["car_number"]):
             search_str +=f"{index+1} car number: {car["car_number"]} car problems: {car["problems"]}\n"
